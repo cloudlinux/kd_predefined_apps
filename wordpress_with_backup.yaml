@@ -107,7 +107,7 @@ spec:
       containers:
         -
           name: mysql
-          image: kuberdock/mysql
+          image: kuberdock/mysql:5.7
           env:
             - name: MYSQL_DATABASE
               value: wordpress
