@@ -124,7 +124,7 @@ spec:
               name: mysql-persistent-storage
         -
           name: magento
-          image: alexcheng/magento:1.9.1.0
+          image: kuberdock/magento:1.9.1.0
           lifecycle:
             postStart:
               exec:

@@ -123,7 +123,7 @@ spec:
               name: mysql-persistent-storage
         -
           name: phpbb
-          image: vimagick/phpbb
+          image: kuberdock/phpbb:3.1.9
           lifecycle:
             postStart:
               exec:
