@@ -15,8 +15,8 @@ kuberdock:
     You have installed [b]Magento![/b]
     Please find more information about Magento software on the official website [url]https://magento.com/[/url]
     Before you will be able to use your application please wait until statuses below will be "Running".
-    To access [b]Magento[/b] use this link: [url]http://%PUBLIC_ADDRESS%[/url]
-    You can access [b]MySQL[/b] using credentials:
+    To finish [b]Magento[/b] installation go to  link: [url]http://%PUBLIC_ADDRESS%/setup/[/url]
+    [b]MySQL[/b] using credentials:
     [b]Host:[/b] 127.0.0.1
     [b]Database:[/b] magento
     [b]Login:[/b] magento
@@ -124,7 +124,7 @@ spec:
               name: mysql-persistent-storage
         -
           name: magento
-          image: kuberdock/magento:1.9.1.0
+          image: kuberdock/magento:2.1.2
           ports:
             - containerPort: 80
               isPublic: True
@@ -133,7 +133,7 @@ spec:
               port: 80
             initialDelaySeconds: 5
           volumeMounts:
-            - mountPath: /var/www/htdocs
+            - mountPath: /usr/src/app/magento2
               name: magento-persistent-storage
               kdCopyFromImage: true
 
