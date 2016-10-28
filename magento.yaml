@@ -101,7 +101,7 @@ spec:
       containers:
         -
           name: mysql
-          image: kuberdock/mysql:5.7
+          image: kuberdock/mysql:5.7-2
           env:
             - name: MYSQL_DATABASE
               value: magento
@@ -113,6 +113,8 @@ spec:
               value: $MYSQL_ROOT_PASSWORD|default:autogen|mysql root password$
             - name: MYSQL_AUTO_MEMORY_ALLOCATE
               value: $MYSQL_AUTO_MEMORY_ALLOCATE|default:innodb|Please choose default MySQL engine "innodb" or "myisam"$
+            - name: MYSQL_THREAD_STACK_SIZE:
+              value: 161072
           ports:
             - containerPort: 3306
           readinessProbe:
